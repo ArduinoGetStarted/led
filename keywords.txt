@@ -1,0 +1,44 @@
+#######################################
+# Syntax Coloring Map For ezLED
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+ezLED	KEYWORD1
+led	KEYWORD1
+led_1	KEYWORD1
+led_2	KEYWORD1
+led_3	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+turnON	KEYWORD2
+turnOFF	KEYWORD2
+toggle	KEYWORD2
+fade	KEYWORD2
+blink	KEYWORD2
+blinkInPeriod	KEYWORD2
+blinkNumberOfTimes	KEYWORD2
+cancel	KEYWORD2
+getState	KEYWORD2
+getOnOff	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+
+LED_ON	LITERAL1
+LED_OFF	LITERAL1
+
+LED_IDLE	LITERAL1
+LED_DELAY	LITERAL1
+LED_FADING	LITERAL1
+LED_BLINKING	LITERAL1
+
+CTRL_ANODE	LITERAL1
+CTRL_CATHODE	LITERAL1
