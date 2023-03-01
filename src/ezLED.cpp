@@ -31,7 +31,7 @@
 
 #include <ezLED.h>
 
-ezLED::ezLED(int pin, int mode = CTRL_ANODE) {
+ezLED::ezLED(int pin, int mode) {
 	_ledPin      = pin;
 	_ctrlMode    = mode; // CTRL_ANODE, CTRL_CATHODE
 	_ledMode     = LED_MODE_OFF;
@@ -78,7 +78,7 @@ void ezLED::updateDigital() {
 	digitalWrite(_ledPin, state);
 }
 
-void ezLED::turnON(unsigned long delayTime = 0) {
+void ezLED::turnON(unsigned long delayTime) {
 	_delayTime = delayTime;
 	_ledMode   = LED_MODE_ON;
 
@@ -92,7 +92,7 @@ void ezLED::turnON(unsigned long delayTime = 0) {
 	loop();
 }
 
-void ezLED::turnOFF(unsigned long delayTime = 0) {
+void ezLED::turnOFF(unsigned long delayTime) {
 	_delayTime = delayTime;
 	_ledMode   = LED_MODE_OFF;
 
@@ -106,7 +106,7 @@ void ezLED::turnOFF(unsigned long delayTime = 0) {
 	loop();
 }
 
-void ezLED::toggle(unsigned long delayTime = 0) {
+void ezLED::toggle(unsigned long delayTime) {
 	_delayTime = delayTime;
 	_ledMode   = LED_MODE_TOGGLE;
 
@@ -122,7 +122,7 @@ void ezLED::toggle(unsigned long delayTime = 0) {
 }
 
 
-void ezLED::fade(int fadeFrom, int fadeTo, unsigned long fadeTime, unsigned long delayTime = 0) {
+void ezLED::fade(int fadeFrom, int fadeTo, unsigned long fadeTime, unsigned long delayTime) {
 	_fadeFrom  = fadeFrom;
 	_fadeTo    = fadeTo;
 	_fadeTime  = fadeTime;
@@ -138,7 +138,7 @@ void ezLED::fade(int fadeFrom, int fadeTo, unsigned long fadeTime, unsigned long
 	loop();
 }
 
-void ezLED::blink(unsigned long onTime, unsigned long offTime, unsigned long delayTime = 0) {
+void ezLED::blink(unsigned long onTime, unsigned long offTime, unsigned long delayTime) {
 	setBlink(onTime, offTime, delayTime);
 	_ledMode      = LED_MODE_BLINK_FOREVER;
 
@@ -156,7 +156,7 @@ void ezLED::blink(unsigned long onTime, unsigned long offTime, unsigned long del
 	loop();
 }
 
-void ezLED::blinkInPeriod(unsigned long onTime, unsigned long offTime, unsigned long blinkTime, unsigned long delayTime = 0) {
+void ezLED::blinkInPeriod(unsigned long onTime, unsigned long offTime, unsigned long blinkTime, unsigned long delayTime) {
 	setBlink(onTime, offTime, delayTime);
 	_blinkTimePeriod = blinkTime;
 	_ledMode   = LED_MODE_BLINK_PERIOD;
@@ -176,7 +176,7 @@ void ezLED::blinkInPeriod(unsigned long onTime, unsigned long offTime, unsigned 
 	loop();
 }
 
-void ezLED::blinkNumberOfTimes(unsigned long onTime, unsigned long offTime, unsigned int numberOfTimes, unsigned long delayTime = 0) {
+void ezLED::blinkNumberOfTimes(unsigned long onTime, unsigned long offTime, unsigned int numberOfTimes, unsigned long delayTime) {
 	setBlink(onTime, offTime, delayTime);
 	_blinkNumberOfTimes = numberOfTimes;
 	_ledMode   = LED_MODE_BLINK_NUM_TIME;
